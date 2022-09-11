@@ -1,0 +1,23 @@
+
+    <ul id="navbar">
+
+
+      <li><a href="{% url 'main_page' %}">Начало</a></li>
+      <li><a href="{% url 'shop' %}">Магазин</a></li>
+        {% if request.user.is_authenticated %}
+             <h3><li>Добрый день,</br>
+                 {{ user.username }}</li></h3>
+             <li><a href="{% url 'logout' %}">Выйти</a></li>
+    {% else %}
+         <li><a href="{% url 'register' %}">Регистрация</a>
+        <li><a href="{% url 'login' %}">Войти</a></li>
+    {% endif %}
+
+        {% if request.user.is_authenticated %}
+        <li><a href="{% url 'add_cat' %}">Добавить товар</a><li>
+        <li><a href="{% url 'user_profile' %}">Профиль -_-</a></li>
+         {% endif %}
+
+
+
+    </ul>

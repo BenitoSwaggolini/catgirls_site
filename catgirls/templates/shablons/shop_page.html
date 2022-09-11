@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load tags %}
+{% block title %}
+Главная страница магазина
+{% endblock %}
+
+
+{% block content %}
+{% include 'shablons/sidebar.html' %}
+{% if best_cat  %}
+<center>
+    <h1>Лучший товар</h1>
+    <img src='../media/{{best_cat.photo}}' width="1000px" height="900px">
+    <h2>Редкость: {{best_cat.rank }}</br>
+        Возраст: {{best_cat.age }}</h2>
+    <big><a href="{{best_cat.return_link}}">Подробная информация</a></big>
+</center>
+{% endif %}
+<center><h4>
+    Популярные товары:
+
+</h4></center>
+<div class="container">
+    {% for catgirl in page_obj %}
+        {% if catgirl %}
+
+      <div class="item">
+          <div class="item-box">
+          <img src="../media/{{catgirl.photo}}" alt=""/>
+          <p style="color:black">{{catgirl.initials}}<p style="color:pink">Редкость:  {{catgirl.rank}}</p><a href="{{catgirl.return_link}}">Подробная информация</a></p>
+
+</div>
+      </div>
+{% endif %}
+        {% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block paginate %}
+
+<center><h2>Страницы</h2></center>
+<center><h2>
+    {% for p in page_obj.paginator.page_range %}
+
+    <a href="?page={{ p }}">{{ p }}</a>
+
+    {% endfor %}
+</h2>
+</center>
+
+{% endblock %}

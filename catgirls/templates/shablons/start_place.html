@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block content %}
+
+<h1>Добро пожаловать в лавку, дорогой гость!</h1>
+<h1>Желаете ознакомиться с товарами?</h1>
+<h1><a href="{% url 'shop' %}">Магазин</a> | <a href="https://youtube.com">Нет</a></h1>
+
+{% endblock %}

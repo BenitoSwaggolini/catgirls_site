@@ -1,0 +1,9 @@
+{% for catgirl in page_obj %}
+<p><img src='../media/{{catgirl.photo}}' width="1000" height="250" float:left>
+{{ catgirl }}
+<h2>Имя - {{catgirl.initials}}</h2>
+          <p>Возраст: {{catgirl.age}}</p>
+          <p>Редкость: {{catgirl.rank}}</p>
+<a href="{{catgirl.return_link}}">Подробная информация</a>
+<h1>------------------------------------------------------</h1>
+{% endfor %}

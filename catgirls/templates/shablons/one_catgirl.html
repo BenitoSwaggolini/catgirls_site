@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+{% block title %}
+{{catgirl.initials}}
+{% endblock %}
+
+{% block head %}
+
+
+{% endblock %}
+
+{% block content %}
+<center><h1>Интересный товар!</h1></center>
+<center>
+    <img src='../../media/{{catgirl.photo}}' width="50%" height="75%" float:left></br>
+    <h2>Подробная информация:</h2>
+    <h3>
+        Имя - {{catgirl.initials}}</br>
+        Вес: {{catgirl.weight}}</br>
+          Рост: {{catgirl.height}}</br>
+          Возраст: {{catgirl.age}}</br>
+          Чистота: {{catgirl.virginity}}</br>
+          Редкость: {{catgirl.rank}}</br>
+
+</h3>
+
+</center>
+
+<center><h1>Стоимость: {{catgirl.price}} $</h1></center>
+<h1>Связь для личного приобретения: <a href="https://www.xvideos.com/video68560107/genshin_impact_keqing_x_slime_vinicenko_">Нажмите чтобы продолжить</a></h1>
+
+
+
+
+{% endblock %}

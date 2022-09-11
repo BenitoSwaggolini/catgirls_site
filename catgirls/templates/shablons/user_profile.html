@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="user_profile">
+    Имя пользователя: {{ username }} </br>
+    Дата присоединения к сообществу <3: {{ date_joined }}
+    Ваши публикации:
+    {% for publ in publications %}
+    <a href="{{publ.return_link}}">{{publ.initials}}</a><br>
+    {% endfor %}
+</div>
+{% endblock %}

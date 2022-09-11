@@ -1,0 +1,14 @@
+{% load static %}
+
+
+
+
+<!-- Side navigation -->
+<div class="sidenav">
+  <h3>Категории</h3>
+  <a href="{% url 'shop' %}">All</a>
+  {% for category in categories %}
+    <a href="{% url 'one_category' one_category=category.status %}">{{category}}</a>
+  {% endfor %}
+</div>
+

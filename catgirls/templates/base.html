@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+{% load cache %}
+<html lang="ru">
+<head>
+<head>
+ <link rel="shortcut icon" href="{% static 'no_image.jpg' %}" type="image/jpg">
+</head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    {% include 'shablons/navbar.html' %}
+
+
+
+</head>
+<body>
+
+{% cache 60 title %}
+
+{% endcache %}
+
+
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block content %}
+
+{% endblock %}
+{% cache 60 content %}
+
+{% endcache %}
+
+{% block paginate %}
+
+{% endblock %}
+
+
+
+<center><div class=»footer»> <div class=»container»><span class=»sub»>© Все права защищены <a href='https://pornhub.com'>ИП profie_player</a> 2022</span></div></center>
+</body>
+</html>
